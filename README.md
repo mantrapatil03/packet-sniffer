@@ -1,4 +1,4 @@
-<h1 align="center">🛰️ Packet Sniffer CLI (Cross-Platform – Linux | Windows | macOS)</h1>
+<h1 align="center">Packet Sniffer CLI (Cross-Platform – Linux | Windows | macOS)</h1>
 
 <p align="center">
   <b>A real-time, command-line network packet analyzer built using Python and Scapy</b><br>
@@ -15,14 +15,14 @@
 
 ---
 
-## 🚀 Overview
+## Overview
 
 **Packet Sniffer CLI** is a Python-based command-line tool that captures and analyzes live network packets.  
 It provides detailed protocol information, supports filters, and can save logs and PCAP files for later analysis in **Wireshark**.
 
 ---
 
-## 🧩 Features
+## Features
 
 ✅ Live real-time packet capture using **Scapy**  
 ✅ Decode **TCP**, **UDP**, **ICMP**, **ARP**, and **DNS**  
@@ -40,7 +40,7 @@ It provides detailed protocol information, supports filters, and can save logs a
 
 ---
 
-## 🏗️ Repository Structure
+## Repository Structure
 ```
 packet-sniffer/
 │
@@ -61,7 +61,7 @@ packet-sniffer/
 ```
 
 
-## ⚙️ Installation
+## Installation
 
 ### 1️⃣ Clone the repository
 ```bash
@@ -74,7 +74,7 @@ cd packet-sniffer
 pip install -r requirements.txt
 ```
 
-## 🔧 Usage
+## Usage
 ### Linux / macOS
 ```
 sudo python3 sniffer.py
@@ -96,21 +96,21 @@ sudo python3 sniffer.py --ip 192.168.1.10
 sudo python3 sniffer.py --port 80
 ```
 
-**📁 Output Files**
-✅ Logs
+***Output Files***
+- **Logs**
 
 Human-readable output
 ```
 logs/captured.log
 ```
-✅ PCAP
+- **PCAP**
 
 Raw packet data (open in Wireshark)
 ```
 captures/capture.pcap
 ```
 
-## 🧠 Supported Protocols
+## Supported Protocols
 | Protocol | Supported | Details                    |
 | -------- | --------- | -------------------------- |
 | **TCP**  | ✅         | Ports, flags, payload size |
@@ -119,30 +119,30 @@ captures/capture.pcap
 | **ARP**  | ✅         | Who-has / is-at            |
 | **DNS**  | ✅         | Query name, type           |
 
-## 🧩 Filters
+## Filters
 | Filter Type | Example             | Description                         |
 | ----------- | ------------------- | ----------------------------------- |
 | Protocol    | `--protocol tcp`    | Capture only TCP packets            |
 | IP          | `--ip 192.168.1.10` | Capture packets to/from given IP    |
 | Port        | `--port 80`         | Capture packets using specific port |
 
-✅ Filters can be combined, e.g.
+ Filters can be combined, e.g.
 ```
 sudo python3 sniffer.py --protocol tcp --port 443
 ```
-## 🔒 Permissions
+## Permissions
 | Platform    | Required Privilege                                 |
 | ----------- | -------------------------------------------------- |
 | Linux/macOS | Run with `sudo`                                    |
 | Windows     | Run as **Administrator**                           |
 | macOS Extra | Run `sudo chmod +r /dev/bpf*` if permission denied |
 
-## 🧰 Troubleshooting
+## Troubleshooting
 
-❌ **Permission Denied**
+ **Permission Denied**
 → Use `sudo` or Administrator privileges
 
-❌ **No Packets Captured**
+ **No Packets Captured**
 → Try specifying a network interface:
 ```
 sudo python3 sniffer.py --iface eth0
@@ -155,14 +155,14 @@ print(get_if_list())
 EOF
 ```
 
-❌ **PCAP Not Saving**
+ **PCAP Not Saving**
 → Ensure captures/ and logs/ exist (auto-created).
 Check file permissions.
 
 **Windows Note:**
 Scapy requires Npcap — install it from https://npcap.com
 
-## 🧑‍💻 Developer Guide
+## Developer Guide
 Main Modules
 | File               | Description                                   |
 | ------------------ | --------------------------------------------- |
@@ -177,7 +177,7 @@ Main Modules
 2. Add new parsing logic for your protocol (e.g., HTTP)
 3. Update CLI filter options if needed
 
-## 🤝 Contributing
+## Contributing
 Contributions are welcome!
 
 If you’d like to improve or extend this tool:
@@ -188,7 +188,7 @@ If you’d like to improve or extend this tool:
 
 For major changes, open an issue first.
 
-## 👨‍💻 Author
+## Author
 **Mantra Patil**
 
 ✉️ techmantrapatil@gmail.com
