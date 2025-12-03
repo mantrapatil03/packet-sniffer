@@ -1,0 +1,102 @@
+# ===========================
+# Line Ending Normalization
+# ===========================
+* text=auto
+
+# Force LF for Python files (recommended for cross-platform projects)
+*.py text eol=lf
+
+# ===========================
+# File Types
+# ===========================
+
+# Treat documentation as text
+*.md text
+*.txt text
+*.rst text
+
+# Treat config files as text
+*.json text
+*.yml text
+*.yaml text
+*.ini text
+*.cfg text
+*.toml text
+
+# Treat logs & captures as binary
+*.pcap binary
+*.log text
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text
+
+# ZIP, archives
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+
+# ===========================
+# GitHub Linguist Tweaks
+# ===========================
+
+# Exclude examples or test captures from language stats
+captures/* linguist-vendored
+logs/* linguist-vendored
+
+# ===========================
+# Text diff settings
+# ===========================
+*.py diff=python
+*.md diff=markdown
+*.json diff=json
+*.yml diff=yaml
+*.yaml diff=yaml
+*.ini diff=ini
+*.cfg diff=ini
+*.toml diff=toml
+*.log diff=log
+*.txt diff=text
+*.rst diff=markdown
+*.svg diff=xml
+*.xml diff=xml
+*.html diff=html
+*.htm diff=html
+*.csv diff=csv
+*.tsv diff=tsv
+*.sql diff=sql
+*.sh diff=sh
+*.bat diff=bat
+*.ps1 diff=powershell
+*.cpp diff=cpp
+*.c diff=cpp
+*.h diff=cpp
+*.java diff=java
+*.js diff=javascript
+*.css diff=css
+*.go diff=go
+*.rb diff=ruby
+*.php diff=php
+*.rs diff=rust
+*.swift diff=swift
+*.kt diff=kotlin
+*.scala diff=scala
+*.lua diff=lua
+*.pl diff=perl
+*.r diff=r
+*.jl diff=julia
+*.hs diff=haskell
+*.erl diff=erlang
+*.ex diff=elixir
+*.exs diff=elixir
+*.dart diff=dart    
+*.m diff=objective-c
+*.vb diff=vbnet
+*.fs diff=fsharp    
+*.fsi diff=fsharp
+*.groovy diff=groovy
+*.sql diff=sql

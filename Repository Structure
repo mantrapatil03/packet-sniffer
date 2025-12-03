@@ -1,0 +1,16 @@
+packet-sniffer/
+│
+├── sniffer.py
+├── packet_parser.py
+├── filters.py
+├── logger.py
+├── utils.py
+│
+├── requirements.txt
+├── README.md
+├── LICENSE
+├── .gitignore
+├── .gitattributes
+│
+├── captures/      # auto-created; ignored from git
+└── logs/          # auto-created; ignored from git
