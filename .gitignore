@@ -33,6 +33,7 @@ dist/
 # ===========================
 # IDEs / Editors
 # ===========================
+
 # VS Code
 .vscode/
 
@@ -59,7 +60,7 @@ Desktop.ini
 # Project-specific Ignored Files
 # ===========================
 
-# Logs & packet captures
+# Logs & packet captures (should not be committed)
 logs/
 captures/
 *.pcap
@@ -69,17 +70,17 @@ captures/
 *.pid
 *.tmp
 
-# Env files
+# Environment config
 .env
 .env.local
 .env.*.local
 .envrc
-.env.*.local
-# Secret files
+
+# Secrets (never commit)
 secrets.json
 secrets.yaml
 secrets.yml
 
 # ===========================
 # Miscellaneous
-
+# ===========================
