@@ -1,0 +1,85 @@
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.so
+*.dll
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+*.egg-info/
+.eggs/
+
+# Build & distribution
+build/
+dist/
+*.egg
+*.whl
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+
+# ===========================
+# IDEs / Editors
+# ===========================
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# ===========================
+# OS / System Files
+# ===========================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# ===========================
+# Project-specific Ignored Files
+# ===========================
+
+# Logs & packet captures
+logs/
+captures/
+*.pcap
+*.log
+
+# Runtime files
+*.pid
+*.tmp
+
+# Env files
+.env
+.env.local
+.env.*.local
+.envrc
+.env.*.local
+# Secret files
+secrets.json
+secrets.yaml
+secrets.yml
+
+# ===========================
+# Miscellaneous
+
