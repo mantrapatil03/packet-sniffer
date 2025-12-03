@@ -40,26 +40,6 @@ It provides detailed protocol information, supports filters, and can save logs a
 
 ---
 
-## Repository Structure
-```
-packet-sniffer/
-│
-├── sniffer.py                     # Main entry point – CLI & packet capture
-├── packet_parser.py               # Decodes and extracts packet details
-├── filters.py                     # Filtering logic (protocol/IP/port)
-├── logger.py                      # Logs and PCAP saving
-├── utils.py                       # Helper functions (timestamp, admin check)
-│
-├── requirements.txt               # Dependencies
-├── README.md                      # Project documentation
-├── LICENSE                        # MIT License
-├── .gitignore
-├── .gitattributes
-│
-├── captures/                      # Auto-created; stores PCAP files
-└── logs/                          # Auto-created; stores log files
-```
-
 
 ## Installation
 
