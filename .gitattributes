@@ -10,12 +10,12 @@
 # File Types
 # ===========================
 
-# Treat documentation as text
+# Documentation
 *.md text
 *.txt text
 *.rst text
 
-# Treat config files as text
+# Configs
 *.json text
 *.yml text
 *.yaml text
@@ -23,7 +23,7 @@
 *.cfg text
 *.toml text
 
-# Treat logs & captures as binary
+# Logs & captures
 *.pcap binary
 *.log text
 
@@ -34,7 +34,7 @@
 *.gif binary
 *.svg text
 
-# ZIP, archives
+# Archives
 *.zip binary
 *.tar binary
 *.gz binary
@@ -44,13 +44,15 @@
 # GitHub Linguist Tweaks
 # ===========================
 
-# Exclude examples or test captures from language stats
+# Exclude logs and captures from language stats
 captures/* linguist-vendored
 logs/* linguist-vendored
 
 # ===========================
 # Text diff settings
 # ===========================
+
+# Programming languages
 *.py diff=python
 *.md diff=markdown
 *.json diff=json
@@ -93,10 +95,9 @@ logs/* linguist-vendored
 *.erl diff=erlang
 *.ex diff=elixir
 *.exs diff=elixir
-*.dart diff=dart    
+*.dart diff=dart
 *.m diff=objective-c
 *.vb diff=vbnet
-*.fs diff=fsharp    
+*.fs diff=fsharp
 *.fsi diff=fsharp
 *.groovy diff=groovy
-*.sql diff=sql
