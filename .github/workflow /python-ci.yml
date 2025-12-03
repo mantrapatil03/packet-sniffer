@@ -1,0 +1,79 @@
+name: Advanced Python CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test on ${{ matrix.os }} / Python ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install black flake8 pytest bandit pip-audit build
+
+      - name: flake8 Lint
+        run: flake8 .
+
+      - name: black Format Check
+        run: black --check .
+
+      - name: Bandit Security Scan
+        run: bandit -r .
+
+      - name: pip-audit
+        run: pip-audit || true
+
+      - name: Run PyTest
+        run: pytest -q
+
+      - name: Build wheel & sdist
+        run: python -m build
+
+      - name: Upload Dist Files
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: dist/*
+          if-no-files-found: ignore
+
+      # ✅ Notify on Failure (email)
+      - name: Notify on Failure
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.example.com
+          server_port: 587
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "CI Failure Notification"
+          body: "The CI workflow failed for commit ${{ github.sha }} on ${{ matrix.os }} using Python ${{ matrix.python-version }}."
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.NOTIFY_EMAIL }}
+
+      # ✅ Deploy on Success
+      - name: Deploy on Success
+        if: success() && github.ref == 'refs/heads/main'
+        run: |
+          echo "Deployment steps would go here."
+          echo "✅ Build successful on ${{ matrix.os }} using Python ${{ matrix.python-version }}"
