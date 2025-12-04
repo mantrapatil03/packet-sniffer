@@ -45,7 +45,7 @@ It provides detailed protocol information, supports filters, and can save logs a
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/mantrapatil03/packet-sniffer.git
+git clone -b NPS-1 --single-branch https://github.com/mantrapatil03/packet-sniffer
 cd packet-sniffer
 ```
 
@@ -92,6 +92,48 @@ Raw packet data (open in Wireshark)
 ```
 captures/capture.pcap
 ```
+---
+## 📡 Packet Analysis Example
+
+The packet sniffer successfully captured and decoded live network traffic. Here’s a quick interpretation of typical packets:
+
+
+
+
+### ✅ UDP Packet
+```go
+2025-12-04 17:29:46.728  UDP  182.108.0.000:8001 -> 224.0.0.7:8001  len=242
+```
+- Example: `182.108.0.000:8001 -> 224.0.0.7:8001`
+- Sent to a **multicast address**.
+- Commonly used for routing protocols, network discovery, or broadcast communication.
+- Normal LAN behavior.
+
+### ✅ ARP Packet
+```go
+2025-12-04 17:29:47.026  ARP  182.108.0.1 -> 182.108.0.103  len=60
+```
+- Example: `182.108.0.1 -> 182.108.0.103`
+- **ARP request**: “Who has this IP?”
+- Standard device-to-device communication inside a network.
+
+### ✅ UDP Broadcast Packet
+```go
+2025-12-04 17:29:47.980  UDP  182.108.0.000:41761 -> 182.108.0.255:15600  len=77
+```
+- Example: `182.108.0.000:41761 -> 182.108.0.255:15600`
+- Sent to **broadcast address**.
+- Used for device discovery, LAN communication, IoT, printers, etc.
+- Nothing unusual.
+
+### 🎯 Sniffer Status
+- Interface auto-detection  
+- UDP/ARP decoding  
+- Timestamp formatting  
+- Real-time packet capture  
+
+All components are functioning correctly.
+---
 
 ## Supported Protocols
 | Protocol | Supported | Details                    |
