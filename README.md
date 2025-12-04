@@ -69,6 +69,12 @@ git clone https://github.com/mantrapatil03/packet-sniffer.git
 cd packet-sniffer
 ```
 
+<h2 align="center"> OR </h2>
+
+```
+git clone -b NPS-1 --single-branch https://github.com/mantrapatil03/packet-sniffer
+cd packet-sniffer
+```
 ### 2️⃣ Install dependencies
 ```
 python3 -m venv venv
