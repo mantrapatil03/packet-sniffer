@@ -11,6 +11,7 @@
   <a href="https://www.linkedin.com/in/mantrapatil25"><img src="https://img.shields.io/badge/Connect-LinkedIn-blue?style=for-the-badge&logo=linkedin"></a>
   <img src="https://img.shields.io/github/stars/mantrapatil03/packet-sniffer?style=for-the-badge&logo=github" />
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" />
+    <img src="https://img.shields.io/github/v/release/mantrapatil03/packet-sniffer?style=for-the-badge">
 </p>
 
 ---
